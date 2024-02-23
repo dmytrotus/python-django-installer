@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  django-installer:
+    image: python:3.12
+    command: bash -c "pip install Django && tail -f /dev/null"
+    working_dir: /app
+    volumes:
+      - ./app:/app
+
+
+# install django
+# python -m pip install Django
+
+# check django version
+# >>> import django
+# >>> print(django.get_version())
+# 5.0
+
+# python -m pip install Django //// it is the last version
+# bash -c "pip install Django &&
+# django-admin startproject myproject &&
+# cd myproject && python manage.py migrate &&
+# python manage.py runserver 0.0.0.0:8000
+
+# docker-compose exec django-installer bash
